@@ -1,5 +1,5 @@
 resource "aws_lb" "this" {
-  name            = "Terraform-LoadBalance"
+  name            = "terraform-lb"
   security_groups = [aws_security_group.lb.id]
   subnets         = [aws_subnet.this["pub_a"].id, aws_subnet.this["pub_b"].id]
   tags            = merge(local.common_tags, { Name = "Load Balance" })
